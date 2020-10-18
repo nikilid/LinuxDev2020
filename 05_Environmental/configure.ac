@@ -24,6 +24,10 @@ AC_CHECK_HEADER([ncurses.h], [], AC_MSG_ERROR([No ncurses.h]))
 
 # Checks for library functions.
 
+AC_ARG_WITH([UTF], AS_HELP_STRING([--without-UTF], [Without UTF-8]))
+
+AS_IF([test "x$with_UTF" != "xno"], [AC_DEFINE(UTF, [], [])])
+
 AC_CONFIG_FILES([Makefile])
 
 AC_OUTPUT

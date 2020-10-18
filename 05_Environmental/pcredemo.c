@@ -6,6 +6,7 @@
 #include <string.h>
 #include <pcre2.h>
 #include <ncurses.h>
+#include "config.h"
 
 int pcredemo(WINDOW * winO, char* str1, char* str2)
 {
@@ -29,7 +30,11 @@ int pcredemo(WINDOW * winO, char* str1, char* str2)
     subject = (PCRE2_SPTR)str2;
     subject_length = (PCRE2_SIZE)strlen((char *)subject);
 
+#ifndef UTF    
     re = pcre2_compile(pattern, PCRE2_ZERO_TERMINATED, PCRE2_UCP, &errnum, &erroffs, NULL);
+#else 
+    re = pcre2_compile(pattern, PCRE2_ZERO_TERMINATED, &errnum, &erroffs, NULL);
+#endif
 
     if (re == NULL) {
         PCRE2_UCHAR buffer[256];
