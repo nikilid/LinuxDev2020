@@ -12,13 +12,13 @@ AC_CONFIG_HEADERS([config.h])
 AC_PROG_CC
 
 # Checks for libraries.
-AC_CHECK_LIB([ncursesw], [initscr])
-AC_CHECK_LIB([prce2], [pcre2_match])
+AC_CHECK_LIB([ncursesw], [initscr], [], AC_MSG_ERROR([Curses is needed]))
+AC_CHECK_LIB([pcre2-8], [pcre2_compile_8], [], AC_MSG_ERROR([PCRE2 is needed]))
 
 # Checks for header files.
-AC_CHECK_HEADERS([string.h])
-AC_CHECK_HEADER([ncurses.h])
-AC_CHECK_HEADER([pcre2.h])
+AC_CHECK_HEADERS([string.h], [], AC_MSG_ERROR([No string.h]))
+AC_CHECK_HEADER([ncurses.h], [], AC_MSG_ERROR([No ncurses.h]))
+
 
 # Checks for typedefs, structures, and compiler characteristics.
 
