@@ -31,9 +31,9 @@ int pcredemo(WINDOW * winO, char* str1, char* str2)
     subject_length = (PCRE2_SIZE)strlen((char *)subject);
 
 #ifndef UTF    
-    re = pcre2_compile(pattern, PCRE2_ZERO_TERMINATED, PCRE2_UCP, &errnum, &erroffs, NULL);
+    re = pcre2_compile(pattern, PCRE2_ZERO_TERMINATED, 0, &errnum, &erroffs, NULL);
 #else 
-    re = pcre2_compile(pattern, PCRE2_ZERO_TERMINATED, &errnum, &erroffs, NULL);
+    re = pcre2_compile(pattern, PCRE2_ZERO_TERMINATED, PCRE2_UCP, &errnum, &erroffs, NULL);
 #endif
 
     if (re == NULL) {
