@@ -1,4 +1,6 @@
-SUBDIRS = src
+SUBDIRS = src tests
 
-gitclean: 
+gitclean: mainteiner-clean
 	git clean -fd
+
+	

@@ -4,6 +4,7 @@
 AC_PREREQ([2.69])
 AC_INIT([Buffer generator], [0.0.0], [lidanikiforova@mail.ru])
 AM_INIT_AUTOMAKE([foreign])
+PKG_CHECK_MODULES([CHECK], [check])
 LT_INIT([disable-static])
 
 AC_CONFIG_MACRO_DIRS([src])
@@ -28,5 +29,5 @@ AC_FUNC_MALLOC
 AC_FUNC_REALLOC
 
 AC_CONFIG_FILES([Makefile
-                 src/Makefile])
+                 src/Makefile tests/Makefile])
 AC_OUTPUT

@@ -1,1 +1,1 @@
-lib_LTLIBRARIES = libbuf
+lib_LTLIBRARIES = libbuf.la
