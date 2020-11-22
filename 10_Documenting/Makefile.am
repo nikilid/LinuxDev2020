@@ -2,6 +2,10 @@ GENERATORS = *.mo *.pot guess Makefile *.o *~ o.* *.a *.so *.txt autom4te.cache 
 bin_PROGRAMS = guess
 pkgdata_DATA=ru/LC_MESSAGES/guess.mo
 
+@DX_RULES@
+
+all-local:	doxygen-doc
+
 ru/LC_MESSAGES/guess.mo: guess.po
 	mkdir -p `dirname $@`
 	msgfmt $< -o $@
