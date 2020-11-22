@@ -1,3 +1,5 @@
+/** @file
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -5,11 +7,28 @@
 #include <locale.h>
 #include "toRom.h"
 
+/** 
+*Translated strings 
+*/
+
 #define _(STRING) gettext(STRING)
 
+/**
+* Converts numbers from the Arabic numeral system to the Roman numeral system
+* @param a The number from 1 to 100
+* 
+* @returns The number in the Roman numeral system
+*/
 char* toRom(int a){
 	return toR[a];
 }
+
+/**
+* Converts numbers from the Roman numeral system to the Arabic numeral system
+* @param a The number from I to C
+* 
+* @returns The number in the Arabic numeral system or -1
+*/
 
 int fromRom(char* str){
 	for (int i = 1; i < 101; i++){
@@ -20,6 +39,17 @@ int fromRom(char* str){
 	return -1;
 }
 
+#define VERSION " guess 0.0"
+
+#define MANUAL _("Guess is used for guessing the user's number\n\
+\n\
+Usage: guess [OPTION] \n\
+\n\
+    --help		print this help, then exit\n\
+    --version		print version number, then exit\n\
+    -r          print numbers in Roman numeral system\n\
+\n\
+")
 
 int main(int argc, char** argv){
 	setlocale(LC_ALL, "");
@@ -31,6 +61,10 @@ int main(int argc, char** argv){
 	int flagR = 0;
 	char ans[10];
 	for (int i = 0; i < argc; i++){
+		if(!strcmp(argv[i], "--help"))
+			return !printf("%s\n", MANUAL);
+		if(!strcmp(argv[i], "--version"))
+			return !printf("%s\n", VERSION);
 		if (!strcmp(argv[i], "-r")){
 			flagR = 1;
 		}
