@@ -1,10 +1,10 @@
-/// @mainpage
+@mainpage
 # Guess number
 
 ## Intro
 Guess is used for guessing the user's number
 
-Usage: guess [OPTION] \n\
+Usage: guess [OPTION] 
 
     --help		print this help, then exit\n\
     --version		print version number, then exit\n\
