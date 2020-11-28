@@ -4,7 +4,7 @@ LIBS += $(GLIB_LIBS)
 
 hash_tab_SOURCES = hash_tables.c
 
-gitclean: mainteiner-clean
+gitclean: 
 	git clean -fd
 
 	
