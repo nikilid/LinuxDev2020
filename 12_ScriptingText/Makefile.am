@@ -27,5 +27,4 @@ messages.pot:	guess.pot guess.c
 allclean:
 	rm -rf $(GENERATORS)
 	
-gitclean: mainteiner-clean
-	git clean -fd
+gitclean: git clean -fd

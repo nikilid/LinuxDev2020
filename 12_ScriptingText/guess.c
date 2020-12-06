@@ -1,3 +1,4 @@
+/* COMMENT:: Guess, 0.0: Sun Dec  6 20:34:33 MSK 2020 */
 /** @file
 */
 #include <stdio.h>
