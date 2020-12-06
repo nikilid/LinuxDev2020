@@ -1,0 +1,74 @@
+# Guess number.
+# Copyright (C) 2020 THE guess'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the guess package.
+# nlo <nlo@nlo-xps-13-9360>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: guess 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-11-15 21:40+0300\n"
+"PO-Revision-Date: 2020-11-15 21:46+0300\n"
+"Last-Translator: nlo <nlo@nlo-xps-13-9360>\n"
+"Language-Team: Russian\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: guess.c:44
+#, c-format
+msgid "Guess is used for guessing the user's number\n\
+\n\
+Usage: guess [OPTION] \n\
+\n\
+    --help		print this help, then exit\n\
+    --version		print version number, then exit\n\
+    -r          print numbers in Roman numeral system\n\
+\n\
+"
+msgstr "Guess используется для угадывания числа пользователя\n\
+\n\
+Порядок использования: guess [ОПЦИИ] \n\
+\n\
+    --help		выводит справку, завершает работу\n\
+    --version		выводит номер версии, завершает работу\n\
+    -r          выводит числа в римской системе счисления\n\
+\n\
+"
+
+#: guess.c:76
+#, c-format
+msgid "Please, guess a number from I to C\n"
+msgstr "Пожалуйста, загадайте число от I до C\n"
+
+#: guess.c:80
+#, c-format
+msgid "Please, guess a number from 1 to 100\n"
+msgstr "Пожалуйста, загадайте число от 1 до 100\n"
+
+#: guess.c:86
+#, c-format
+msgid "Your number larger than %s (Yes/No)?\n"
+msgstr "Ваше число больше, чем %s (Да/Нет)?\n"
+
+#: guess.c:88
+#, c-format
+msgid "Your number larger than %d (Yes/No)?\n"
+msgstr "Ваше число больше, чем %d (Да/Нет)?\n"
+
+#: guess.c:91
+msgid "Yes"
+msgstr "Да"
+
+#: guess.c:107
+#, c-format
+msgid "Your number is %s\n"
+msgstr "Ваше число %s\n"
+
+#: guess.c:109
+#, c-format
+msgid "Your number is %d\n"
+msgstr "Ваше число %d\n"
