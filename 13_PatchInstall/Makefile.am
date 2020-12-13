@@ -1,10 +1,23 @@
 GENERATORS = *.mo *.pot guess Makefile *.o *~ o.* *.a *.so *.txt autom4te.cache .deps *.m4 compile *.h* configure *.status COPYING depcomp INSTALL install-sh *.in missing stamp-h1 config.log ru
-bin_PROGRAMS = guess
-pkgdata_DATA=ru/LC_MESSAGES/guess.mo
+
+DICPR = /usr/bin/
+DICRU = /usr/share/locale/
+
+if DESTDIR
+	DICPR = $(DESTDIR)
+	DICRU = $(DESTDIR)
+endif
+
+all: guessin
+
+guessin: ru/LC_MESSAGES/guess.mo guess allclean
+
+guess: guess.c
+	$(CC) $< -o $(DICPR)$@
 
 ru/LC_MESSAGES/guess.mo: guess.po
-	mkdir -p `dirname $@`
-	msgfmt $< -o $@
+	mkdir -p `dirname $(DICRU)$@`
+	msgfmt $< -o $(DICRU)$@
 
 ru.po:	messages.pot
 	msgmerge -U $@ $<
@@ -17,5 +30,4 @@ messages.pot:	guess.pot guess.c
 allclean:
 	rm -rf $(GENERATORS)
 	
-gitclean: mainteiner-clean
-	git clean -fd
+gitclean:    git clean -fd

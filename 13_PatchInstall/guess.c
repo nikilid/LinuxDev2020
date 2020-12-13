@@ -3,12 +3,15 @@
 #include <string.h>
 #include <libintl.h>
 #include <locale.h>
+#include <libgen.h>
 
 #define _(STRING) gettext(STRING)
 
 
-int main(void){
+int main(int argc, char** argv){
 	setlocale(LC_ALL, "");
+	char* dir;
+	dir = dirname(realpath(argv[0], NULL));
 	bindtextdomain("guess", dir); 	
 	textdomain("guess");
 	printf(_("Please, guess a number from 1 to 100\n"));
